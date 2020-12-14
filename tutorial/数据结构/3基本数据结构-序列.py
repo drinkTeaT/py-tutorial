@@ -11,6 +11,7 @@ print(type(codes))
 # 生成器表达式。返回一个生成器的类。加了圆括号的列表推导。逐个产出元素，而不是先产出再遍历。一般放进构造函数里面
 codes = (i for i in symbols)
 codes = list((i for i in symbols))
+
 # 元组
 tu = tuple((i for i in symbols))
 ini = ('tom', 'tokyo', 12)
@@ -22,6 +23,7 @@ name, city, age = age, city, name
 
 # 用*加元组变量名作为入参，以及用_接收元组不敢兴趣的参数
 def plus(a, b):
+    print(a,b)
     return a + b, b
 
 
@@ -31,3 +33,11 @@ res, _ = plus(*tu)
 # *接收不确定参数
 a, *b, c = range(5)
 print(a, b, c)
+
+# 具名元组(java中的枚举)
+from collections import namedtuple
+
+# 两个参数，第一个为类名，第二个枚举的参数
+City = namedtuple('City', 'name country')
+sz = City('shenzhen', 'China')
+print(sz.name, sz.country)
