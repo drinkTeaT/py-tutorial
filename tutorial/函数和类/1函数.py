@@ -5,7 +5,7 @@ def fun1(a, *b, c):
     return 1,2,3,4,5
 
 
-res = fun1(1, 2, 3, 4, 5, c=3)
+_,*res = fun1(1, 2, 3, 4, 5, c=3)
 print(res)
 
 # **是以字典的方式导入
