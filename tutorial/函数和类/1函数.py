@@ -2,11 +2,12 @@
 def fun1(a, *b, c):
     """ *函数 """
     print(a, b, c)
-    return 1,2,3,4,5
+    return 1, 2, 3, 4, 5
 
 
-_,*res = fun1(1, 2, 3, 4, 5, c=3)
+_, *res = fun1(1, 2, 3, 4, 5, c=3)
 print(res)
+
 
 # **是以字典的方式导入
 def fun2(a, b, **c):
